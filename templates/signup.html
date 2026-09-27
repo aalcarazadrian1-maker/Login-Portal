@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+
+<link rel="stylesheet"  href="{{ url_for('static', filename='style.css') }}">
+
+    </head>
+
+<body>
+    <div class="login-card">
+
+        <h1>Create Your Account</h1>
+
+        <form method="POST" action = "/signup">
+        <input type="email" name="email" placeholder="Email Address">
+        <input type="password" name="password" placeholder ="Password">
+
+    </form>
+       <button>Create Account</button> 
+    
+       <a href="/">login here</a>
+
+    </div>
+</body>

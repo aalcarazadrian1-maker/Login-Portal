@@ -1,0 +1,127 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap');
+
+.login-card h1,
+.login-card h2 {
+    font-family: 'poppins', sans-serif;
+
+}
+
+
+body {
+
+    font-family: Arial, sans-serif;
+
+
+    background: #f7f7f7;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.login-card {
+
+    width: 100%;
+    max-width: 500px;
+
+    background:white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+
+    border: 3px solid black;
+}
+
+
+.login-card form {
+    
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+}
+ 
+.login-card input {
+
+    padding: 14px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+
+}
+
+
+.login-card button {
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    width: 100%;
+    margin-top: 12px;
+
+    background: #111;
+    color: white;
+
+    border: none;
+    border-radius: 8px;
+
+    cursor: pointer;
+
+}
+
+.login-card button:hover {
+    background-color: #333;
+
+}
+
+
+.login-card a {
+    display: block;
+    margin-top:16px;
+
+    text-align: center;
+    color: #555;
+    text-decoration: none;
+
+
+}
+
+.login-card a:hover {
+
+text-decoration: underline;
+
+}
+
+
+.dashboard-card {
+
+    width: 100%;
+    max-width: 700px;
+    justify-content: center;
+
+    background: white;
+    padding: 40px;
+
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+
+
+}
+
+.dashboard-card a {
+    display: inline-block;
+    margin-right:16px;
+
+
+    color: #111;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+
+.dashboard-card a:hover {
+
+text-decoration: underline;
+
+}
