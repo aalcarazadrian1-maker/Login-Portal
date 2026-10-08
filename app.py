@@ -15,8 +15,7 @@ def home():
 @app.route("/login", methods = ["POST"])
 def login():
     email = request.form["email"].strip().lower()
-    password = request.form["password"].strip().lower()
-
+    password = request.form["password"]
     if not email or not password:
             return "Email and password are required"
   
