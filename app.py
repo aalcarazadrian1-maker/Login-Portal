@@ -105,33 +105,3 @@ def logout():
     session.clear()
     return redirect("/")
 
-
-
-@app.route("/private")
-def private():
-    if "user_id" not in session:
-        return "Must be logged in first"
-
-    user_id = session["user_id"]
-    connection = sqlite3.connect("users.db")
-    cursor = connection.cursor()
-
-    cursor.execute(
-        "SELECT * FROM users WHERE ID = ?",
-        (user_id,)
-    
-    )
-
-    user = cursor.fetchone()
-
-    
-    cursor.execute(
-        "SELECT private_text FROM private_data WHERE user_id = ?",
-        (user_id,)
-    )
-
-    private_row = cursor.fetchone()
-    private_text = private_row[0] if private_row else "No private data yet"
-    connection.close()
-
-    return render_template("private.html", email = user[1] ,role = user[3], private_text = private_text) 
