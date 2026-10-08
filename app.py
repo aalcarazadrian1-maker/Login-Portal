@@ -11,9 +11,8 @@ app.secret_key = secrets.token_hex(32)
 
 def home():
     return render_template("login.html")
+
 @app.route("/login", methods = ["POST"])
-
-
 def login():
     email = request.form["email"].strip().lower()
     password = request.form["password"].strip().lower()
@@ -65,7 +64,7 @@ def signup():
 @app.route("/signup", methods = ["POST"])
 def signup_post():
     email = request.form["email"].strip().lower()
-    password = request.form["password"].strip().lower()
+    password = request.form["password"].strip()
 
     if not email or not password:
         return "Email and password are required"
@@ -91,6 +90,7 @@ def signup_post():
 
     connection.close()
     return "Account Created"
+
 
 @app.route("/admin")
 def admin():
@@ -132,9 +132,6 @@ def private():
 
     private_row = cursor.fetchone()
     private_text = private_row[0] if private_row else "No private data yet"
-
-
-
     connection.close()
 
     return render_template("private.html", email = user[1] ,role = user[3], private_text = private_text) 
